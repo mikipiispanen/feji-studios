@@ -15,6 +15,10 @@ const isCodexSeatbeltSandbox = process.env.CODEX_SANDBOX === 'seatbelt';
 const localBindingConfig = {
   main: 'vinext/server/fetch-handler',
   compatibility_flags: ['nodejs_compat'],
+  routes: [
+    { pattern: 'feji.fi', custom_domain: true },
+    { pattern: 'www.feji.fi', custom_domain: true },
+  ],
   d1_databases: d1
     ? [
         {

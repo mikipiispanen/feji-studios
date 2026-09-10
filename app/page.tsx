@@ -355,7 +355,7 @@ export default function Home() {
             should be easy to use. With Styrka and Orka, I focus on clear
             interfaces, efficient workflows, and only the features that help.
           </p>
-          <Link className="text-link" href="mailto:fejistudios@gmail.com">
+          <Link className="text-link" href="mailto:hello@feji.fi">
             Say hello <MoveUpRight size={19} />
           </Link>
         </section>
@@ -367,11 +367,11 @@ export default function Home() {
           <span className="eyebrow">
             QUESTIONS, FEEDBACK, OR AN OPPORTUNITY?
           </span>
-          <Link href="mailto:fejistudios@gmail.com">
+          <Link href="mailto:hello@feji.fi">
             Let’s talk.
             <ArrowUpRight />
           </Link>
-          <p>fejistudios@gmail.com</p>
+          <p>hello@feji.fi</p>
         </section>
       </main>
       <Footer />

@@ -17,7 +17,7 @@ export function Header() {
         <nav aria-label="Main navigation">
           <Link href="/#apps">Apps</Link>
           <Link href="/#about">About</Link>
-          <Link className="nav-contact" href="mailto:fejistudios@gmail.com">
+          <Link className="nav-contact" href="mailto:hello@feji.fi">
             Say hello <ArrowUpRight size={15} />
           </Link>
         </nav>

@@ -47,8 +47,8 @@ export const privacy: LegalDocument = {
       title: 'Questions?',
       text: 'If you have any questions about this privacy policy, feel free to contact me.',
       link: {
-        label: 'fejistudios@gmail.com',
-        url: 'mailto:fejistudios@gmail.com',
+        label: 'hello@feji.fi',
+        url: 'mailto:hello@feji.fi',
       },
     },
   ],
@@ -103,8 +103,8 @@ export const terms: LegalDocument = {
       title: 'Questions?',
       text: 'If you have any questions about these terms, feel free to contact me.',
       link: {
-        label: 'fejistudios@gmail.com',
-        url: 'mailto:fejistudios@gmail.com',
+        label: 'hello@feji.fi',
+        url: 'mailto:hello@feji.fi',
       },
     },
   ],
@@ -154,8 +154,8 @@ export const orkaPrivacy: LegalDocument = {
       title: 'Contact',
       text: 'If you have a question about Orka and your privacy, contact Feji Studios.',
       link: {
-        label: 'fejistudios@gmail.com',
-        url: 'mailto:fejistudios@gmail.com',
+        label: 'hello@feji.fi',
+        url: 'mailto:hello@feji.fi',
       },
     },
   ],
@@ -214,8 +214,8 @@ export const orkaTerms: LegalDocument = {
       title: 'Contact',
       text: 'For questions about Orka or these terms, contact me at Feji Studios.',
       link: {
-        label: 'fejistudios@gmail.com',
-        url: 'mailto:fejistudios@gmail.com',
+        label: 'hello@feji.fi',
+        url: 'mailto:hello@feji.fi',
       },
     },
   ],
