@@ -1,0 +1,4 @@
+import { permanentRedirect } from 'next/navigation';
+export default function LegacyTerms() {
+  permanentRedirect('/styrka/terms');
+}
