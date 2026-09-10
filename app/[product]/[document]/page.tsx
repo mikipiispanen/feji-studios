@@ -7,11 +7,15 @@ type Props = { params: Promise<{ product: string; document: string }> };
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { product, document } = await params;
   const content = getDocument(product, document);
+  if (!content) return { title: 'Page not found' };
+  const name = product === 'orka' ? 'Orka' : 'Styrka';
+  const title = `${name} ${content.title}`;
   return {
-    title: content
-      ? `${product === 'orka' ? 'Orka' : 'Styrka'} ${content.title}`
-      : 'Page not found',
-    robots: content?.draft ? { index: false, follow: true } : undefined,
+    title,
+    description: content.intro,
+    alternates: { canonical: `/${product}/${document}` },
+    openGraph: { title, description: content.intro, url: `/${product}/${document}` },
+    robots: content.draft ? { index: false, follow: true } : undefined,
   };
 }
 export default async function LegalPage({ params }: Props) {
