@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40">
+  <defs>
+    <filter id="glow" x="-60%" y="-50%" width="220%" height="200%" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="2.2"/>
+    </filter>
+  </defs>
+  <path d="M8 5v24l6-6 5 11 5-2-5-11h9Z" fill="#60ed94" opacity=".8" filter="url(#glow)"/>
+  <path d="M8 5v24l6-6 5 11 5-2-5-11h9Z" fill="#101813" stroke="#8bf5af" stroke-width="1.3" stroke-linejoin="round"/>
+</svg>

@@ -1513,3 +1513,44 @@ html[data-face='cool'] .face-cool {
 @media (prefers-reduced-motion: reduce) {
   .hero-art:hover .chip-one { transform: rotate(-10deg); }
 }
+
+/* App landing pages share the homepage typography and palette. */
+.product-more { display: flex; width: fit-content; margin-top: 20px; font-size: 15px; }
+.app-page { padding-top: 145px; padding-bottom: 80px; }
+.app-breadcrumb { margin-bottom: 45px; font-size: 15px; }
+.app-breadcrumb a, .app-support a { text-decoration: underline; text-underline-offset: 4px; }
+.app-intro { max-width: 780px; }
+.app-intro > img { border-radius: 16px; margin-bottom: 24px; }
+.app-intro h1 { font-size: clamp(40px, 6vw, 76px); line-height: 1.08; margin: 20px 0; }
+.app-intro > p:not(.eyebrow) { font-size: 20px; line-height: 1.7; color: var(--muted); margin-bottom: 28px; }
+.app-features { margin-top: 72px; }
+.app-features section { display: grid; grid-template-columns: 1fr 280px; align-items: center; gap: 64px; border-top: 1px solid var(--line); padding: 52px 0; }
+.app-features h2, .app-support h2 { font-size: clamp(28px, 3.5vw, 44px); line-height: 1.15; margin-bottom: 20px; }
+.app-features p, .app-support p { font-size: 18px; line-height: 1.75; color: var(--muted); }
+.app-features img { width: 100%; height: auto; border-radius: 28px; }
+.app-support { border-top: 1px solid var(--line); padding-top: 48px; }
+.app-support nav { display: flex; flex-wrap: wrap; gap: 16px 28px; margin-top: 24px; }
+@media (max-width: 700px) {
+  .app-page { padding-top: 120px; }
+  .app-features section { grid-template-columns: 1fr; gap: 28px; }
+  .app-features img { max-width: 260px; justify-self: center; }
+  .app-intro > p:not(.eyebrow) { font-size: 18px; }
+}
+
+/* Native SVG cursors: no tracking layer, animation loop, or click interception. */
+@media (hover: hover) and (pointer: fine) and (forced-colors: none) {
+  html {
+    cursor: url('/cursors/feji-arrow.svg') 8 5, auto;
+  }
+  a, button, summary, [role='button'], label[for],
+  input[type='submit'], input[type='button'], input[type='checkbox'], input[type='radio'] {
+    cursor: url('/cursors/feji-pointer.svg') 8 5, pointer;
+  }
+  input:not([type='submit']):not([type='button']):not([type='checkbox']):not([type='radio']),
+  textarea, [contenteditable='true'] {
+    cursor: text;
+  }
+  button:disabled, input:disabled, [aria-disabled='true'] {
+    cursor: not-allowed;
+  }
+}

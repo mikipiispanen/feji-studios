@@ -1,14 +1,28 @@
-import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowDown, ArrowUpRight, MoveUpRight } from 'lucide-react';
 import { Header, Footer } from './shared';
 import Motion from './motion';
 import Sticker from './sticker';
 import Character from './character';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = { alternates: { canonical: '/' } };
+
+const websiteJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://feji.fi/#website',
+  name: 'Feji Studios',
+  alternateName: 'Feji',
+  url: 'https://feji.fi/',
+  inLanguage: 'en',
+  publisher: { '@id': 'https://feji.fi/#organization' },
+};
 
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
       <Header />
       <main id="main-content">
         <div id="top" />
@@ -37,13 +51,13 @@ export default function Home() {
             For real <em>life.</em>
           </h1>
           <p className="hero-description hero-enter">
-            I build apps that are easy to use.
+            Orka planner. Styrka gym tracker.
             <br />
             Fewer distractions. More time for what matters.
           </p>
-          <Link className="pill hero-enter" href="#apps">
+          <a className="pill hero-enter" href="#apps">
             Meet the apps <ArrowDown size={17} />
-          </Link>
+          </a>
           <div className="hero-bottom">
             <span>Designed & built by Miki Piispanen</span>
             <span>
@@ -73,19 +87,20 @@ export default function Home() {
                 <span>Orka</span>
               </div>
               <span className="status">
-                <i /> OUT NOW · FREE TO DOWNLOAD
+                <i /> COMING SOON
               </span>
               <h2>
                 A clearer head.
                 <br />A calmer day.
               </h2>
               <p>
-                Classes, tasks, and deadlines in one place. A simple planner
+                Orka brings classes, tasks, and deadlines into one place. A simple planner
                 that makes it easier to get on with your day.
               </p>
-              <Link className="pill dark" href="#orka-story">
+              <a className="pill dark" href="#orka-story">
                 A closer look <ArrowUpRight size={18} />
-              </Link>
+              </a>
+              <a className="text-link product-more" href="/orka">Explore Orka planner <ArrowUpRight size={15} /></a>
               <div className="product-category">
                 YOUR DAY, A LITTLE MORE TOGETHER.
               </div>
@@ -208,9 +223,9 @@ export default function Home() {
                     Keep your plans in one place, so you can get back to the day
                     in front of you.
                   </p>
-                  <Link className="text-link" href="/orka/privacy">
+                  <a className="text-link" href="/orka/privacy">
                     Orka privacy <ArrowUpRight size={15} />
-                  </Link>
+                  </a>
                   <Image
                     unoptimized
                     className="mobile-screen"
@@ -250,17 +265,18 @@ export default function Home() {
                 More lifting.
               </h2>
               <p>
-                Log your sets. See your progress. Get back to the next rep. Gym
+                Log your sets with Styrka. See your progress. Get back to the next rep. Gym
                 tracking that stays out of your way.
               </p>
-              <Link
+              <a
                 className="pill light"
                 href="https://apps.apple.com/fi/app/styrka-gym-tracker/id6761281378"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Download on the App Store <ArrowUpRight size={18} />
-              </Link>
+              </a>
+              <a className="text-link product-more" href="/styrka">Explore Styrka gym tracker <ArrowUpRight size={15} /></a>
               <div className="product-category">
                 YOUR EFFORT. YOUR PROGRESS.
               </div>
@@ -355,9 +371,9 @@ export default function Home() {
             should be easy to use. With Styrka and Orka, I focus on clear
             interfaces, efficient workflows, and only the features that help.
           </p>
-          <Link className="text-link" href="mailto:hello@feji.fi">
+          <a className="text-link" href="mailto:hello@feji.fi">
             Say hello <MoveUpRight size={19} />
-          </Link>
+          </a>
         </section>
         <section
           className="contact wrap reveal"
@@ -367,10 +383,10 @@ export default function Home() {
           <span className="eyebrow">
             QUESTIONS, FEEDBACK, OR AN OPPORTUNITY?
           </span>
-          <Link href="mailto:hello@feji.fi">
+          <a href="mailto:hello@feji.fi">
             Let’s talk.
             <ArrowUpRight />
-          </Link>
+          </a>
           <p>hello@feji.fi</p>
         </section>
       </main>

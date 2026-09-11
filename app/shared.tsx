@@ -1,25 +1,24 @@
-import Link from 'next/link';
 import Character from './character';
 import { ArrowUpRight } from 'lucide-react';
 export function Header() {
   return (
     <>
-      <Link className="skip-link" href="#main-content">
+      <a className="skip-link" href="#main-content">
         Skip to content
-      </Link>
+      </a>
       <header className="site-header">
-        <Link className="wordmark" href="/" aria-label="Feji Studios home">
+        <a className="wordmark" href="/" aria-label="Feji Studios home">
           <Character compact />
           <span className="wordmark-text">
             feji<span>studios</span>
           </span>
-        </Link>
+        </a>
         <nav aria-label="Main navigation">
-          <Link href="/#apps">Apps</Link>
-          <Link href="/#about">About</Link>
-          <Link className="nav-contact" href="mailto:hello@feji.fi">
+          <a href="/#apps">Apps</a>
+          <a href="/#about">About</a>
+          <a className="nav-contact" href="mailto:hello@feji.fi">
             Say hello <ArrowUpRight size={15} />
-          </Link>
+          </a>
         </nav>
       </header>
     </>
@@ -29,25 +28,25 @@ export function Footer() {
   return (
     <footer className="footer wrap">
       <div className="footer-top">
-        <Link className="wordmark" href="/">
+        <a className="wordmark" href="/">
           feji<span>studios</span>
-        </Link>
+        </a>
         <p>Simple apps. Built with purpose.</p>
-        <Link href="/#top" className="back-top">
+        <a href="/#top" className="back-top">
           Back to top ↑
-        </Link>
+        </a>
       </div>
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} Feji Studios</span>
         <div>
-          <span>Styrka</span>
-          <Link href="/styrka/privacy">Privacy</Link>
-          <Link href="/styrka/terms">Terms</Link>
+          <a href="/styrka">Styrka</a>
+          <a href="/styrka/privacy">Privacy</a>
+          <a href="/styrka/terms">Terms</a>
         </div>
         <div>
-          <span>Orka</span>
-          <Link href="/orka/privacy">Privacy</Link>
-          <Link href="/orka/terms">Terms</Link>
+          <a href="/orka">Orka</a>
+          <a href="/orka/privacy">Privacy</a>
+          <a href="/orka/terms">Terms</a>
         </div>
       </div>
     </footer>

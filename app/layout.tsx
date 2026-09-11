@@ -1,25 +1,26 @@
 import type { Metadata } from 'next';
 import './globals.css';
 const description =
-  'Meet Orka and Styrka. Simple, efficient apps by independent developer Miki Piispanen.';
+  'Discover Orka, a planner for classes, tasks and deadlines, and Styrka, an iOS gym tracker for sets, reps and progress. Built by Miki Piispanen at Feji Studios.';
 export const metadata: Metadata = {
   metadataBase: new URL('https://feji.fi'),
   title: {
-    default: 'Feji Studios — Simple apps. For real life.',
+    default: 'Feji Studios — Orka Planner & Styrka Gym Tracker',
     template: '%s — Feji Studios',
   },
   description,
-  alternates: { canonical: '/' },
+  authors: [{ name: 'Miki Piispanen', url: 'https://feji.fi/#about' }],
   openGraph: {
-    title: 'Feji Studios — Simple apps. For real life.',
+    title: 'Feji Studios — Orka Planner & Styrka Gym Tracker',
     description,
     url: '/',
     siteName: 'Feji Studios',
     type: 'website',
+    locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Feji Studios — Simple apps. For real life.',
+    title: 'Feji Studios — Orka Planner & Styrka Gym Tracker',
     description,
   },
   icons: { icon: '/favicon.svg' },
@@ -27,6 +28,7 @@ export const metadata: Metadata = {
 const organizationJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': 'https://feji.fi/#organization',
   name: 'Feji Studios',
   url: 'https://feji.fi',
   email: 'hello@feji.fi',
