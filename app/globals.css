@@ -1540,11 +1540,11 @@ html[data-face='cool'] .face-cool {
 /* Native SVG cursors: no tracking layer, animation loop, or click interception. */
 @media (hover: hover) and (pointer: fine) and (forced-colors: none) {
   html {
-    cursor: url('/cursors/feji-arrow.svg') 8 5, auto;
+    cursor: url('/cursors/feji-arrow.svg') 7 5, auto;
   }
   a, button, summary, [role='button'], label[for],
   input[type='submit'], input[type='button'], input[type='checkbox'], input[type='radio'] {
-    cursor: url('/cursors/feji-pointer.svg') 8 5, pointer;
+    cursor: url('/cursors/feji-pointer.svg') 7 5, pointer;
   }
   input:not([type='submit']):not([type='button']):not([type='checkbox']):not([type='radio']),
   textarea, [contenteditable='true'] {
@@ -1552,5 +1552,14 @@ html[data-face='cool'] .face-cool {
   }
   button:disabled, input:disabled, [aria-disabled='true'] {
     cursor: not-allowed;
+  }
+}
+
+/* Keep selected text legible on both light and dark sections. */
+@media (forced-colors: none) {
+  ::selection {
+    background-color: #9bf2b5;
+    color: #073d30;
+    text-shadow: none;
   }
 }
