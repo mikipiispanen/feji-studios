@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 const base = process.argv[2] || 'http://localhost:3011';
-const paths = ['/', '/orka', '/styrka', '/orka/privacy', '/orka/terms', '/styrka/privacy', '/styrka/terms'];
+const paths = ['/', '/orka', '/styrka', '/orka/privacy', '/orka/terms', '/orka/support', '/styrka/privacy', '/styrka/terms'];
 const titles = new Set();
 for (const path of paths) {
   const res = await fetch(base + path);

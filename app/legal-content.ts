@@ -1,12 +1,17 @@
 export type LegalDocument = {
   title: string;
+  // Visible page heading when it should differ from `title`.
+  heading?: string;
   date?: string;
-  intro: string;
+  dateLabel?: string;
+  intro?: string;
   draft?: boolean;
   sections: {
     title: string;
     text: string;
     link?: { label: string; url: string };
+    // Phrases within `text` rendered as links, leaving the wording unchanged.
+    inlineLinks?: { text: string; url: string }[];
   }[];
 };
 export const privacy: LegalDocument = {
@@ -109,61 +114,90 @@ export const terms: LegalDocument = {
     },
   ],
 };
+// Orka's legal text is also built into the app. Keep both copies word for word identical.
+const orkaContactLink = { text: 'hello@feji.fi', url: 'mailto:hello@feji.fi' };
 export const orkaPrivacy: LegalDocument = {
   title: 'Privacy Policy',
-  intro:
-    'Your plans are yours. Feji Studios does not collect personal data through Orka, and Quick Add processes your text entirely on your device.',
+  heading: 'Orka Privacy Policy',
+  dateLabel: 'Last updated',
+  date: '26 September 2026',
   sections: [
     {
       title: 'Data collection',
-      text: 'Feji Studios does not collect personal data through Orka. I do not receive the tasks, deadlines, events, exams, or other planner content you enter into the app.',
-    },
-    {
-      title: 'Quick Add',
-      text: 'Quick Add processes your text entirely on your device. Your Quick Add text is not sent to Feji Studios or an external AI service for processing.',
+      text: 'Feji Studios does not collect personal data through Orka. Orka has no Feji Studios account or server, and contains no advertising, analytics, or tracking. Feji Studios does not receive the tasks, deadlines, events, exams, courses, or other planner content you enter into the app, and does not sell or share your information.',
     },
     {
       title: 'Your planner',
-      text: 'Your planner content is used to provide the planning features you choose to use. Feji Studios does not collect this content or maintain a copy that I can access or recover for you.',
+      text: 'Your planner content is stored on your device and used only to provide the planning features you choose to use. Feji Studios does not collect this content or maintain a copy that can be accessed or recovered for you.',
+    },
+    {
+      title: 'iCloud sync',
+      text: 'If you are signed in to iCloud, your items and courses sync between your devices through your private iCloud database using Apple’s CloudKit. This data is stored in your iCloud account, not with Feji Studios, and Feji Studios cannot access it. Apple’s privacy policy applies to iCloud. You can turn off iCloud for Orka in your device’s iCloud settings. App preferences, calendar choices, and friends’ calendar connections stay on the device where you set them.',
+    },
+    {
+      title: 'Apple Calendar',
+      text: 'If you allow calendar access, Orka reads events from the calendars you select so they can appear beside your plan and in widgets. Orka never creates, changes, or deletes events in your calendars, and events are read on your device only. You can change calendar access at any time in Settings › Privacy & Security › Calendars.',
+    },
+    {
+      title: 'Calendar links',
+      text: 'When you add a calendar by link, Orka hands the link to Apple Calendar, which subscribes to it and keeps it up to date. The link is not sent to Feji Studios. The calendar’s provider, such as your school, receives requests from Apple Calendar as it would for any subscription.',
+    },
+    {
+      title: 'Google Calendar',
+      text: 'If you connect Google, Orka requests read-only access to your calendar list and events. Your device communicates directly with Google. Selected events are cached locally for the planner and widgets; Google sign-in credentials are stored in the device Keychain. Feji Studios does not receive these calendar events on a server. Disconnect Google in Connected calendars to clear this integration’s local event cache and sign-in state. You can also revoke access in your Google Account.',
+    },
+    {
+      title: 'Google user data',
+      text: 'Orka uses data from Google only to show your selected calendars and events inside the app and its widgets. It is not used for advertising, not sold, not transferred to others, not read by people, and not used to train AI models. Orka’s use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.',
+      inlineLinks: [
+        {
+          text: 'Google API Services User Data Policy',
+          url: 'https://developers.google.com/terms/api-services-user-data-policy',
+        },
+      ],
+    },
+    {
+      title: 'Friends’ calendars',
+      text: 'Find time together uses calendars other people have already shared with you through Apple Calendar or Google. Orka reads these calendars on your device only to show busy times and gaps, and never changes them. Event titles are hidden unless you choose to show them for a friend. The names you give friends are stored only on this device. Nothing is sent to your friends, and they do not need Orka.',
+    },
+    {
+      title: 'Reminders',
+      text: 'Reminders you set are scheduled by iOS on your device and show the item’s title. Orka asks for notification permission only when you choose to use reminders, and does not send notifications from a server.',
+    },
+    {
+      title: 'Quick Add & sharing',
+      text: 'Quick Add processes your text entirely on your device. Your Quick Add text is not sent to Feji Studios or an external AI service for processing. Text and links you share to Orka from other apps are saved as items on your device in the same way.',
     },
     {
       title: 'Optional purchases',
-      text: 'Orka is free, with optional in-app purchases for customisation and additional calendar subscriptions. Feji Studios does not collect personal data through these features. Purchases billed through the Apple App Store are handled by Apple, whose handling of account and payment information is governed by its own privacy policy.',
-      link: {
-        label: 'Apple’s Privacy Policy',
-        url: 'https://www.apple.com/legal/privacy/',
-      },
+      text: 'Orka is free, with an optional one-time Premium purchase that unlocks more colour kits, more connected calendars, and Find time together. Apple handles payment; Orka only checks with Apple whether Premium has been purchased on your Apple Account. Feji Studios does not receive your payment details. Apple’s handling of account and payment information is governed by its own privacy policy.',
     },
     {
-      title: 'Contacting me',
-      text: 'If you choose to email me for support, I receive the email address and information you include so that I can respond. This is separate from data collection through the app. Please do not include private planner content unless it is necessary for your question.',
+      title: 'Deleting your data',
+      text: 'Items and courses you delete in Orka are removed from this device and, with iCloud sync, from your other devices. Deleting the app removes the data stored on that device. Disconnecting Google clears Google data cached by Orka.',
+    },
+    {
+      title: 'Contacting Feji Studios',
+      text: 'If you choose to email for support, Feji Studios receives the email address and information you include so that a response can be provided. This is separate from data collection through the app. Please do not include private planner content unless it is necessary for your question.',
     },
     {
       title: 'Scope of this policy',
-      text: 'This policy describes the Orka app. Services you use separately, including the Apple App Store, are governed by their own privacy policies.',
-      link: {
-        label: 'Apple’s Privacy Policy',
-        url: 'https://www.apple.com/legal/privacy/',
-      },
+      text: 'This policy describes the Orka app. Services you use separately, including the Apple App Store, iCloud, and Google, are governed by their own privacy policies.',
     },
     {
       title: 'Changes to this policy',
-      text: 'Any changes to this policy will be published on this page. The policy will be updated if Orka’s data handling changes.',
+      text: "Any changes to this policy will be published on this page. The policy will be updated if Orka's data handling changes. Last updated 26 September 2026.",
     },
     {
       title: 'Contact',
-      text: 'If you have a question about Orka and your privacy, contact Feji Studios.',
-      link: {
-        label: 'hello@feji.fi',
-        url: 'mailto:hello@feji.fi',
-      },
+      text: 'If you have a question about Orka and your privacy, contact Feji Studios at hello@feji.fi.',
+      inlineLinks: [orkaContactLink],
     },
   ],
 };
 export const orkaTerms: LegalDocument = {
-  title: 'Terms and Conditions',
-  intro:
-    'Orka is a free planning app by Miki Piispanen, the independent developer behind Feji Studios. Optional in-app purchases provide customisation and additional calendar subscriptions.',
+  title: 'Terms & Conditions',
+  heading: 'Orka Terms & Conditions',
   sections: [
     {
       title: 'Using Orka',
@@ -171,7 +205,7 @@ export const orkaTerms: LegalDocument = {
     },
     {
       title: 'Free app & optional purchases',
-      text: 'Orka is free to download and use. Optional in-app purchases unlock customisation and additional calendar subscriptions. The features included, price, and payment terms for each purchase are shown before you confirm it. You can use the free app without purchasing these extras.',
+      text: 'Orka is free to download and use. An optional one-time Premium purchase unlocks more colour kits, more connected calendars, and Find time together. It is not a subscription. The features included, price, and payment terms for each purchase are shown before you confirm it. You can use the free app without purchasing these extras.',
     },
     {
       title: 'Payment terms',
@@ -180,31 +214,29 @@ export const orkaTerms: LegalDocument = {
     {
       title: 'Refunds',
       text: 'For purchases billed by Apple, refund requests can be submitted through Apple. Eligibility depends on the purchase and applicable rules. Nothing in these terms limits your mandatory consumer rights.',
-      link: {
-        label: 'Apple’s refund instructions',
-        url: 'https://support.apple.com/en-us/118223',
-      },
     },
     {
       title: 'Your information',
-      text: 'Your planner content remains yours. Feji Studios does not collect personal data through Orka. Quick Add processes text entirely on your device, without sending it to me or an external AI service. See the privacy policy for details.',
-      link: { label: 'Orka Privacy Policy', url: '/orka/privacy' },
+      text: 'Your planner content remains yours. Feji Studios does not collect personal data through Orka. Quick Add processes text entirely on your device, without sending it to Feji Studios or an external AI service. See the privacy policy for details.',
+      inlineLinks: [{ text: 'privacy policy', url: '/orka/privacy' }],
     },
     {
       title: 'License & ownership',
-      text: 'Orka’s code, design, and original artwork belong to their respective owners. Your use of the app is subject to the license supplied with it through the App Store. Apple’s Standard End User License Agreement applies where no custom license is provided. Your own planner content is not transferred to me.',
-      link: {
-        label: 'Apple’s Standard EULA',
-        url: 'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',
-      },
+      text: "Orka's code, design, and original artwork belong to their respective owners. Your use of the app is subject to the license supplied with it through the App Store. Apple's Standard End User License Agreement applies where no custom license is provided. Your own planner content is not transferred to Feji Studios.",
+      inlineLinks: [
+        {
+          text: "Apple's Standard End User License Agreement",
+          url: 'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',
+        },
+      ],
     },
     {
       title: 'Responsible use',
-      text: 'Use Orka lawfully and respect the rights of other people and calendar content providers. Do not attempt to bypass purchase protections or interfere with the app’s operation. These restrictions do not prevent activities expressly permitted by applicable law.',
+      text: "Use Orka lawfully and respect the rights of other people and calendar content providers. Do not attempt to bypass purchase protections or interfere with the app's operation. These restrictions do not prevent activities expressly permitted by applicable law.",
     },
     {
       title: 'Planning & availability',
-      text: 'You are responsible for checking important dates and the accuracy of your entries. Calendar information may depend on the source you choose. I cannot promise that every calendar source will remain available or that the app will always be error-free. Keep your own copy of important information; I do not hold a copy of your planner data that I can recover for you. Your statutory rights remain unaffected.',
+      text: 'You are responsible for checking important dates and the accuracy of your entries. Calendar information may depend on the source you choose. Feji Studios cannot promise that every calendar source will remain available or that the app will always be error-free. Keep your own copy of important information; Feji Studios does not hold a copy of your planner data that can be recovered for you. Your statutory rights remain unaffected.',
     },
     {
       title: 'Updates to these terms',
@@ -212,11 +244,8 @@ export const orkaTerms: LegalDocument = {
     },
     {
       title: 'Contact',
-      text: 'For questions about Orka or these terms, contact me at Feji Studios.',
-      link: {
-        label: 'hello@feji.fi',
-        url: 'mailto:hello@feji.fi',
-      },
+      text: 'For questions about Orka or these terms, contact Feji Studios at hello@feji.fi.',
+      inlineLinks: [orkaContactLink],
     },
   ],
 };

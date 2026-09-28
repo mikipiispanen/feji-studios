@@ -47,6 +47,7 @@ export function Footer() {
           <a href="/orka">Orka</a>
           <a href="/orka/privacy">Privacy</a>
           <a href="/orka/terms">Terms</a>
+          <a href="/orka/support">Support</a>
         </div>
       </div>
     </footer>

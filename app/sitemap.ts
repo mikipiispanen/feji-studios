@@ -8,6 +8,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/styrka', priority: 0.8, changeFrequency: 'monthly' as const },
     { path: '/orka/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
     { path: '/orka/terms', priority: 0.3, changeFrequency: 'yearly' as const },
+    { path: '/orka/support', priority: 0.3, changeFrequency: 'yearly' as const },
     { path: '/styrka/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
     { path: '/styrka/terms', priority: 0.3, changeFrequency: 'yearly' as const },
   ];

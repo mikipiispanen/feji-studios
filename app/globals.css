@@ -1530,11 +1530,33 @@ html[data-face='cool'] .face-cool {
 .app-features img { width: 100%; height: auto; border-radius: 28px; }
 .app-support { border-top: 1px solid var(--line); padding-top: 48px; }
 .app-support nav { display: flex; flex-wrap: wrap; gap: 16px 28px; margin-top: 24px; }
+.app-coming-soon { width: fit-content; margin: 0; cursor: default; }
+.app-coming-soon:hover { transform: none; box-shadow: 0 3px 5px #123a2910, inset 0 1px 0 #fff8; }
+.app-highlights { margin-top: 72px; border-top: 1px solid var(--line); padding-top: 52px; }
+.app-highlights > h2 { font-size: clamp(28px, 3.5vw, 44px); line-height: 1.15; margin-bottom: 32px; }
+.app-highlights ul { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 36px 40px; }
+.app-highlights h3 { font-size: 20px; margin-bottom: 10px; }
+.app-highlights p { font-size: 16px; line-height: 1.7; color: var(--muted); }
+.app-google { margin-bottom: 48px; padding-bottom: 12px; }
+.app-google ul { margin: 0 0 20px; padding-left: 1.2em; font-size: 18px; line-height: 1.75; color: var(--muted); }
+.app-google li + li { margin-top: 6px; }
+.legal-related { display: flex; flex-wrap: wrap; gap: 0 32px; }
+.support-body { margin-top: 55px; max-width: 720px; }
+.support-heading { font-size: 27px; letter-spacing: -1px; margin-bottom: 28px; }
+.support-body .legal-section h3 { font-size: 20px; margin-bottom: 12px; }
+.support-body .legal-section p { line-height: 1.8; color: var(--muted); }
+.support-body .legal-section strong { color: var(--foreground); font-weight: 600; }
+.support-email, .support-body .legal-section a { text-decoration: underline; text-underline-offset: 4px; }
 @media (max-width: 700px) {
   .app-page { padding-top: 120px; }
   .app-features section { grid-template-columns: 1fr; gap: 28px; }
   .app-features img { max-width: 260px; justify-self: center; }
   .app-intro > p:not(.eyebrow) { font-size: 18px; }
+  .app-highlights ul { grid-template-columns: 1fr; gap: 24px; }
+  .app-google ul { font-size: 16px; }
+}
+@media (min-width: 701px) and (max-width: 1000px) {
+  .app-highlights ul { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* Native SVG cursors: no tracking layer, animation loop, or click interception. */
