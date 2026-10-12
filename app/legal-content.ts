@@ -120,7 +120,7 @@ export const orkaPrivacy: LegalDocument = {
   title: 'Privacy Policy',
   heading: 'Orka Privacy Policy',
   dateLabel: 'Last updated',
-  date: '26 September 2026',
+  date: '12 October 2026',
   sections: [
     {
       title: 'Data collection',
@@ -143,18 +143,21 @@ export const orkaPrivacy: LegalDocument = {
       text: 'When you add a calendar by link, Orka hands the link to Apple Calendar, which subscribes to it and keeps it up to date. The link is not sent to Feji Studios. The calendar’s provider, such as your school, receives requests from Apple Calendar as it would for any subscription.',
     },
     {
-      title: 'Google Calendar',
-      text: 'If you connect Google, Orka requests read-only access to your calendar list and events. Your device communicates directly with Google. Selected events are cached locally for the planner and widgets; Google sign-in credentials are stored in the device Keychain. Feji Studios does not receive these calendar events on a server. Disconnect Google in Connected calendars to clear this integration’s local event cache and sign-in state. You can also revoke access in your Google Account.',
+      title: "Google Calendar data we access",
+      text: "Connecting Google Calendar is optional. Orka requests calendar.calendarlist.readonly to read calendar identifiers, names, colours and access information so you can choose calendars. It requests calendar.events.readonly to read events from the calendars you select, including event identifiers, titles, start and end times, all-day status, locations, descriptions, links, recurrence information and whether events mark time as busy. Google Sign-In also provides an account identifier and email address to identify the connected account and label its calendars. Orka does not request permission to create, change or delete Google calendars or events.",
     },
     {
-      title: 'Google user data',
-      text: 'Orka uses data from Google only to show your selected calendars and events inside the app and its widgets. It is not used for advertising, not sold, not transferred to others, not read by people, and not used to train AI models. Orka’s use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.',
-      inlineLinks: [
-        {
-          text: 'Google API Services User Data Policy',
-          url: 'https://developers.google.com/terms/api-services-user-data-policy',
-        },
-      ],
+      title: "How we use Google user data",
+      text: "Orka uses the calendar list to let you select which calendars appear in your planner. It uses event titles, dates and times to display classes and appointments beside your tasks in calendar views and Home Screen widgets; locations, descriptions and links provide event details; recurrence information identifies recurring classes; and busy times help Find time together calculate gaps in calendars already shared with you. The connected account identifier prevents mixing data from different Google accounts, and its email address labels the source of events. This processing happens on your device to provide the features you choose. Feji Studios does not receive your Google calendar data on a server, sell it, disclose it to advertisers or data brokers, or use it for advertising. Feji Studios personnel do not read your Google calendar data. Google user data is not used to develop, improve or train AI or machine-learning models. Orka’s use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.",
+      inlineLinks: [{ text: 'Google API Services User Data Policy', url: 'https://developers.google.com/terms/api-services-user-data-policy' }],
+    },
+    {
+      title: "Protecting Google user data",
+      text: "Orka communicates directly with Google over HTTPS, using TLS encryption to protect Google user data and OAuth tokens in transit. Google sign-in credentials are managed by the Google Sign-In SDK using the device Keychain. Calendar API access tokens are sent in the Authorization header, not in URL query parameters, and Orka rejects API redirects to prevent forwarding them to another destination. Its Calendar API session disables persistent HTTP response, cookie and credential caches. Cached calendar events contain no OAuth credentials and are held in the app’s iOS sandbox and its App Group for Orka’s own app extensions. iOS controls access to these containers. Orka checks the connected account before accepting refreshed tokens and API results, and cancels pending requests and clears cached integration data when you disconnect or change accounts. Orka requests read-only permissions and fetches events only from the calendars you select. Feji Studios operates no server that receives or stores this Google calendar data.",
+    },
+    {
+      title: "Google data storage and deletion",
+      text: "Selected Google events are cached on your device, including a snapshot shared with Orka’s widgets, so your schedule can be displayed without a new network request every time. Cached data can remain between launches and is replaced as the selected schedule refreshes. The integration’s Google event cache is not synced to iCloud or stored on a Feji Studios server. Disconnect Google in Connected calendars to clear the integration’s local event snapshot, in-memory results and local sign-in state. Changing the connected Google account also clears the previous account’s cache. You can separately revoke Orka’s authorization in your Google Account; disconnecting in Orka does not delete your calendars or events at Google.",
     },
     {
       title: 'Friends’ calendars',
@@ -186,7 +189,7 @@ export const orkaPrivacy: LegalDocument = {
     },
     {
       title: 'Changes to this policy',
-      text: "Any changes to this policy will be published on this page. The policy will be updated if Orka's data handling changes. Last updated 26 September 2026.",
+      text: "Any changes to this policy will be published on this page. The policy will be updated if Orka's data handling changes. Last updated 12 October 2026.",
     },
     {
       title: 'Contact',
