@@ -14,7 +14,7 @@ const apps = {
     features: [
       { title: 'See your classes and tasks together', text: 'The Today view brings your timeline and upcoming classes into one place. Check where you need to be and what is coming next.', image: 'orka-1', alt: 'Orka Today timeline showing classes and tasks' },
       { title: 'Turn a thought into a plan', text: 'Quick Add gives a task, event, deadline or exam a place to go. Processing happens on your device, and you review the details before adding them to your planner.', image: 'orka-2', alt: 'Orka Quick Add with details ready for review' },
-      { title: 'Keep your plans easy to find', text: 'Review your plans in the Planner view. Orka is coming soon as a free download, with an optional one-time Premium purchase.', image: 'orka-3', alt: 'Orka Planner with Quick Capture' },
+      { title: 'Keep your plans easy to find', text: 'Review your plans in the Planner view. Orka is coming soon as a free download, with every colour kit and calendar connection included.', image: 'orka-3', alt: 'Orka Planner with Quick Capture' },
     ],
   },
   styrka: {
@@ -40,7 +40,7 @@ const orkaHighlights = [
   { title: 'Today view and widgets', text: 'See the day ahead at a glance in the app and on your Home Screen.' },
   { title: 'Your class schedule', text: 'Show your classes from Apple Calendar, Google Calendar or a school .ics calendar link.' },
   { title: 'Reminders', text: 'Set reminders for the items that matter, scheduled on your device.' },
-  { title: 'Optional Premium', text: 'A one-time purchase adds more colour kits, more connected calendars and Find time together, which shows gaps in friends’ shared calendars.' },
+  { title: 'Made for your whole schedule', text: 'Every colour kit, calendar connection and Find time together is included. Compare friends’ shared calendars to find room in your week.' },
 ];
 const getApp = (product: string) => product === 'orka' || product === 'styrka' ? apps[product] : null;
 type Props = { params: Promise<{ product: string }> };

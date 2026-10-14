@@ -120,7 +120,7 @@ export const orkaPrivacy: LegalDocument = {
   title: 'Privacy Policy',
   heading: 'Orka Privacy Policy',
   dateLabel: 'Last updated',
-  date: '12 October 2026',
+  date: '14 October 2026',
   sections: [
     {
       title: 'Data collection',
@@ -172,10 +172,6 @@ export const orkaPrivacy: LegalDocument = {
       text: 'Quick Add processes your text entirely on your device. Your Quick Add text is not sent to Feji Studios or an external AI service for processing. Text and links you share to Orka from other apps are saved as items on your device in the same way.',
     },
     {
-      title: 'Optional purchases',
-      text: 'Orka is free, with an optional one-time Premium purchase that unlocks more colour kits, more connected calendars, and Find time together. Apple handles payment; Orka only checks with Apple whether Premium has been purchased on your Apple Account. Feji Studios does not receive your payment details. Apple’s handling of account and payment information is governed by its own privacy policy.',
-    },
-    {
       title: 'Deleting your data',
       text: 'Items and courses you delete in Orka are removed from this device and, with iCloud sync, from your other devices. Deleting the app removes the data stored on that device. Disconnecting Google clears Google data cached by Orka.',
     },
@@ -189,7 +185,7 @@ export const orkaPrivacy: LegalDocument = {
     },
     {
       title: 'Changes to this policy',
-      text: "Any changes to this policy will be published on this page. The policy will be updated if Orka's data handling changes. Last updated 12 October 2026.",
+      text: "Any changes to this policy will be published on this page. The policy will be updated if Orka's data handling changes. Last updated 14 October 2026.",
     },
     {
       title: 'Contact',
@@ -207,16 +203,8 @@ export const orkaTerms: LegalDocument = {
       text: 'These terms describe your use of Orka. Orka helps you organise tasks, deadlines, events, and exams. Please read these terms and the privacy policy before using the app.',
     },
     {
-      title: 'Free app & optional purchases',
-      text: 'Orka is free to download and use. An optional one-time Premium purchase unlocks more colour kits, more connected calendars, and Find time together. It is not a subscription. The features included, price, and payment terms for each purchase are shown before you confirm it. You can use the free app without purchasing these extras.',
-    },
-    {
-      title: 'Payment terms',
-      text: 'For purchases billed through the Apple App Store, Apple handles payment under its applicable terms. Review the purchase screen for whether a product is a one-time purchase or a recurring subscription, and any duration or renewal terms.',
-    },
-    {
-      title: 'Refunds',
-      text: 'For purchases billed by Apple, refund requests can be submitted through Apple. Eligibility depends on the purchase and applicable rules. Nothing in these terms limits your mandatory consumer rights.',
+      title: 'Free app',
+      text: 'Orka is free to download and use. All colour kits, connected calendars, and Find time together are included.',
     },
     {
       title: 'Your information',
@@ -235,7 +223,7 @@ export const orkaTerms: LegalDocument = {
     },
     {
       title: 'Responsible use',
-      text: "Use Orka lawfully and respect the rights of other people and calendar content providers. Do not attempt to bypass purchase protections or interfere with the app's operation. These restrictions do not prevent activities expressly permitted by applicable law.",
+      text: "Use Orka lawfully and respect the rights of other people and calendar content providers. Do not interfere with the app's operation. These restrictions do not prevent activities expressly permitted by applicable law.",
     },
     {
       title: 'Planning & availability',
@@ -243,7 +231,7 @@ export const orkaTerms: LegalDocument = {
     },
     {
       title: 'Updates to these terms',
-      text: 'Updates to these terms will be published on this page. Changes to paid features or purchase conditions remain subject to the terms presented when you purchase and to applicable consumer law.',
+      text: 'Updates to these terms will be published on this page.',
     },
     {
       title: 'Contact',
