@@ -1,11 +1,11 @@
 # Before Orka launches
 
-Orka’s terms now reflect the owner-confirmed free app with optional in-app purchases for customisation and additional calendar subscriptions. No billing interval or automatic renewal has been assumed. The owner confirmed that Feji Studios collects no data through Orka and Quick Add processes entirely on device; the privacy page now reflects those facts. Confirm before release:
+Orka is free to download and use, with all colour kits, calendar connections and Find time together included. The owner confirmed this launch model on 14 October 2026. The owner confirmed that Feji Studios collects no data through Orka and Quick Add processes entirely on device; the privacy page now reflects those facts. Confirm before release:
 - Legal operator and support contact (currently the studio’s existing public support address).
 - Data stored on device, in iCloud, or on other servers; calendar permissions and exact scope.
 - Recheck that all Quick Add processing remains on device, as confirmed by the owner.
 - Analytics/crash reporting and other SDKs.
-- Retention and deletion procedures, intended age group, and exact purchase products/renewal terms at release.
+- Retention and deletion procedures, intended age group, and the features included at release.
 - Final user rights, license, limitations, jurisdiction, effective dates.
 
 Styrka’s existing legal documents were transcribed from https://fejistudios.vercel.app/privacy and /terms on September 9, 2026. Their substantive wording and original effective dates were preserved, including the privacy policy’s March 26, 2025 date. Confirm that date and that existing statements still match the released app before public launch. /privacy and /terms permanently redirect to their Styrka counterparts. Website hosting practices are separate from app disclosures.

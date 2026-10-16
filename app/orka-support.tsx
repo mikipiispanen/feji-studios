@@ -3,7 +3,7 @@ import { Header, Footer } from './shared';
 
 const title = 'Orka Support';
 const description =
-  'Get help with Orka, the student planner by Feji Studios. Connect calendars, restore Premium, disconnect Google Calendar and learn how iCloud sync works.';
+  'Get help with Orka, the student planner by Feji Studios. Connect calendars, choose colour kits, disconnect Google Calendar and learn how iCloud sync works.';
 export const orkaSupportMetadata: Metadata = {
   title,
   description,
@@ -17,7 +17,7 @@ const faq = [
     question: 'How do I connect Apple Calendar, Google Calendar or a school calendar?',
     answer: (
       <p>
-        In Orka, open <strong>Settings › Calendar</strong>. From there you can
+        In Orka, open <strong>Preferences › Connected calendars</strong>. From there you can
         allow access to Apple Calendar, connect Google Calendar with read-only
         access, or add a school calendar using its .ics link. Orka then
         shows the calendars you select beside your plan and in widgets.
@@ -25,12 +25,13 @@ const faq = [
     ),
   },
   {
-    question: 'How do I restore my Premium purchase?',
+    question: 'Which features are included?',
     answer: (
       <p>
-        Open <strong>Premium</strong> in Orka and tap{' '}
-        <strong>Restore Purchases</strong>. Make sure you are signed in with the
-        same Apple Account you used to buy Premium.
+        Orka is free to download and use. All colour kits, connected calendars,
+        and Find time together are included. Choose your colour kit in
+        <strong> Preferences › Color Kit</strong> and manage your calendars in
+        <strong> Preferences › Connected calendars</strong>.
       </p>
     ),
   },
