@@ -6,6 +6,8 @@ A responsive studio website for Orka and Styrka, built with React, Vinext, and t
 
 `npm install` then `npm run dev`. `npm run build` produces the Cloudflare-compatible deployment. `npx tsc --noEmit` checks types; `npx oxlint app` checks authored application code. The starter's unused component catalog has existing lint findings under the full `npm run lint` command.
 
+`node scripts/check-rsc-security.mjs` checks the React 19.3.1 security baseline and the React source bundled inside `@vitejs/plugin-rsc`, which a normal dependency audit does not inspect. Keep React, React DOM, the direct RSC package and the plugin's bundled RSC version aligned. GitHub Actions runs this check before building and deploying to the existing Cloudflare Worker for `feji.fi` and `www.feji.fi`. Review this baseline when changing React release lines; it is not a substitute for checking newer advisories.
+
 ## Content
 
 - Home and product story: `app/page.tsx`
