@@ -120,11 +120,11 @@ export const orkaPrivacy: LegalDocument = {
   title: 'Privacy Policy',
   heading: 'Orka Privacy Policy',
   dateLabel: 'Last updated',
-  date: '14 October 2026',
+  date: '23 October 2026',
   sections: [
     {
       title: 'Data collection',
-      text: 'Feji Studios does not collect personal data through Orka. Orka has no Feji Studios account or server, and contains no advertising, analytics, or tracking. Feji Studios does not receive the tasks, deadlines, events, exams, courses, or other planner content you enter into the app, and does not sell or share your information.',
+      text: "Feji Studios does not collect your planner content through Orka. Orka has no Feji Studios account or server, and contains no advertising or tracking SDKs. Optional support diagnostics and Apple crash reports are described below. Feji Studios does not receive the tasks, deadlines, events, exams, courses, or other planner content you enter into the app, and does not sell or share your information.",
     },
     {
       title: 'Your planner',
@@ -165,15 +165,27 @@ export const orkaPrivacy: LegalDocument = {
     },
     {
       title: 'Reminders',
-      text: 'Reminders you set are scheduled by iOS on your device and show the item’s title. Orka asks for notification permission only when you choose to use reminders, and does not send notifications from a server.',
+      text: "Reminders are scheduled locally by iOS and show the item’s title and planned date or time. During onboarding, Orka explains reminders and planning nudges; Apple’s permission request appears only if you accept or enable notifications in Settings. You can control reminder categories, timing and sounds in Settings. Optional planning nudges help with inbox items, exam preparation, postponed tasks, overdue reviews, weekly planning and returning after a break. You can turn off each type. Notifications are scheduled on your device, not a server.",
+    },
+    {
+      title: "Widgets & Live Activities",
+      text: "If you add an Orka widget or start a focus session, planner or calendar titles and timing information may appear on your Home Screen, Lock Screen or Dynamic Island. iOS displays this information on your device; Orka does not send it to a Feji Studios server. You control widgets, notification previews and Live Activities through Orka and your device settings.",
     },
     {
       title: 'Quick Add & sharing',
       text: 'Quick Add processes your text entirely on your device. Your Quick Add text is not sent to Feji Studios or an external AI service for processing. Text and links you share to Orka from other apps are saved as items on your device in the same way.',
     },
     {
+      title: "Opening links & Maps",
+      text: "Orka does not open event links or send event locations to another service automatically. If you choose Open in Maps, Orka asks Apple Maps to search for the displayed location. If you open an event link, calendar sharing guide, support page or other external link, the destination service receives the information needed to handle your request and applies its own privacy policy.",
+    },
+    {
       title: 'Deleting your data',
-      text: 'Items and courses you delete in Orka are removed from this device and, with iCloud sync, from your other devices. Deleting the app removes the data stored on that device. Disconnecting Google clears Google data cached by Orka.',
+      text: "Items and courses you delete in Orka are removed from this device and, when iCloud sync is active, from your other devices through iCloud. Deleting the app removes its local data from that device, but does not by itself delete planner data already synced to your private iCloud database. You can manage Orka’s iCloud data through your Apple Account and iCloud settings. Disconnecting Google clears Google data cached by Orka.",
+    },
+    {
+      title: "Diagnostics and crash reports",
+      text: "Orka keeps bounded failure counts in memory for the current app session. These contain no planner content, account identifiers or raw errors and are cleared when the process ends or you clear them in Send feedback. You can preview and optionally include a summary with app and OS versions and storage mode in feedback you send. Orka does not upload these diagnostics automatically or use a third-party crash SDK. Apple separately provides crash reports under its own policies: App Store reports depend on analytics sharing settings; TestFlight automatically shares crash reports with the developer.",
     },
     {
       title: 'Contacting Feji Studios',
@@ -185,7 +197,7 @@ export const orkaPrivacy: LegalDocument = {
     },
     {
       title: 'Changes to this policy',
-      text: "Any changes to this policy will be published on this page. The policy will be updated if Orka's data handling changes. Last updated 14 October 2026.",
+      text: "Any changes to this policy will be published on this page. The policy will be updated if Orka's data handling changes. Last updated 23 October 2026.",
     },
     {
       title: 'Contact',
@@ -208,7 +220,7 @@ export const orkaTerms: LegalDocument = {
     },
     {
       title: 'Your information',
-      text: 'Your planner content remains yours. Feji Studios does not collect personal data through Orka. Quick Add processes text entirely on your device, without sending it to Feji Studios or an external AI service. See the privacy policy for details.',
+      text: "Your planner content remains yours. Feji Studios does not collect your planner content through Orka. Optional support diagnostics and Apple crash reports are described in the privacy policy. Quick Add processes text entirely on your device, without sending it to Feji Studios or an external AI service. See the privacy policy for details.",
       inlineLinks: [{ text: 'privacy policy', url: '/orka/privacy' }],
     },
     {
