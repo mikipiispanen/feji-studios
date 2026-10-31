@@ -120,7 +120,7 @@ export const orkaPrivacy: LegalDocument = {
   title: 'Privacy Policy',
   heading: 'Orka Privacy Policy',
   dateLabel: 'Last updated',
-  date: '23 October 2026',
+  date: '30 October 2026',
   sections: [
     {
       title: 'Data collection',
@@ -148,7 +148,7 @@ export const orkaPrivacy: LegalDocument = {
     },
     {
       title: "How we use Google user data",
-      text: "Orka uses the calendar list to let you select which calendars appear in your planner. It uses event titles, dates and times to display classes and appointments beside your tasks in calendar views and Home Screen widgets; locations, descriptions and links provide event details; recurrence information identifies recurring classes; and busy times help Find time together calculate gaps in calendars already shared with you. The connected account identifier prevents mixing data from different Google accounts, and its email address labels the source of events. This processing happens on your device to provide the features you choose. Feji Studios does not receive your Google calendar data on a server, sell it, disclose it to advertisers or data brokers, or use it for advertising. Feji Studios personnel do not read your Google calendar data. Google user data is not used to develop, improve or train AI or machine-learning models. Orka’s use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.",
+      text: "Orka uses the calendar list to let you select which calendars appear in your planner. It uses event titles, dates and times to display classes and appointments beside your tasks in calendar views and Home Screen widgets; locations, descriptions and links provide event details; recurrence information identifies recurring classes; and busy times help Find time together calculate gaps in calendars already shared with you. If you choose to include busy times in a Plan with AI request, Orka adds only the start and end times of busy events to the request text, without titles or other event details; you then copy or share that text yourself. The connected account identifier prevents mixing data from different Google accounts, and its email address labels the source of events. This processing happens on your device to provide the features you choose. Feji Studios does not receive your Google calendar data on a server, sell it, disclose it to advertisers or data brokers, or use it for advertising. Feji Studios personnel do not read your Google calendar data. Google user data is not used to develop, improve or train AI or machine-learning models. Orka’s use and transfer of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.",
       inlineLinks: [{ text: 'Google API Services User Data Policy', url: 'https://developers.google.com/terms/api-services-user-data-policy' }],
     },
     {
@@ -176,6 +176,10 @@ export const orkaPrivacy: LegalDocument = {
       text: 'Quick Add processes your text entirely on your device. Your Quick Add text is not sent to Feji Studios or an external AI service for processing. Text and links you share to Orka from other apps are saved as items on your device in the same way.',
     },
     {
+      title: 'Plan with AI',
+      text: "Plan with AI is optional, and Orka never connects to an AI service itself. When you use it, Orka writes a planning request on your device from the choices you make: the titles, types, due dates and courses of the work you select, your study hours and any wishes you type. Notes are included only if you turn them on. Busy times from your calendars can be included as start and end times only, without event titles, locations or other details. Friends’ calendars are never included. Orka does not send the request anywhere: you decide whether to copy it or share it as a file, and which AI service or other app receives it. That service’s own terms and privacy policy apply to what you share with it, including whether it keeps or learns from your conversations, and Feji Studios does not receive it. When you paste or open a plan, Orka reads it on your device, shows the study sessions it found and adds only the ones you tick. It never changes or deletes your existing items. Your Plan with AI choices are saved only on this device.",
+    },
+    {
       title: "Opening links & Maps",
       text: "Orka does not open event links or send event locations to another service automatically. If you choose Open in Maps, Orka asks Apple Maps to search for the displayed location. If you open an event link, calendar sharing guide, support page or other external link, the destination service receives the information needed to handle your request and applies its own privacy policy.",
     },
@@ -197,7 +201,7 @@ export const orkaPrivacy: LegalDocument = {
     },
     {
       title: 'Changes to this policy',
-      text: "Any changes to this policy will be published on this page. The policy will be updated if Orka's data handling changes. Last updated 23 October 2026.",
+      text: "Any changes to this policy will be published on this page. The policy will be updated if Orka's data handling changes. Last updated 30 October 2026.",
     },
     {
       title: 'Contact',
