@@ -11,6 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/orka/support', priority: 0.3, changeFrequency: 'yearly' as const },
     { path: '/styrka/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
     { path: '/styrka/terms', priority: 0.3, changeFrequency: 'yearly' as const },
+    { path: '/varva', priority: 0.8, changeFrequency: 'monthly' as const },
+    { path: '/varva/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
+    { path: '/varva/terms', priority: 0.3, changeFrequency: 'yearly' as const },
+    { path: '/varva/support', priority: 0.3, changeFrequency: 'yearly' as const },
   ];
   return routes.filter(({ path }) => {
     const [, product, document] = path.split('/');

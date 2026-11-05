@@ -256,6 +256,156 @@ export const orkaTerms: LegalDocument = {
     },
   ],
 };
+// Varva's statements describe the app as audited on 3 November 2026: no network code, no account,
+// no third-party SDKs, CloudKit off, local notifications and an App Group widget snapshot only.
+// Recheck them against the build that is submitted, and update both pages if data handling changes.
+const varvaContactLink = { text: 'hello@feji.fi', url: 'mailto:hello@feji.fi' };
+export const varvaPrivacy: LegalDocument = {
+  title: 'Privacy Policy',
+  heading: 'Varva Privacy Policy',
+  dateLabel: 'Last updated',
+  date: '3 November 2026',
+  intro:
+    'Varva is a private record of your Heat, Cold and Contrast practice. This policy explains what the app stores, where it stays, and the few cases where information leaves Varva because you choose to move it.',
+  sections: [
+    {
+      title: 'Data collection',
+      text: 'Feji Studios does not collect any data through Varva. Varva has no account, no Feji Studios server and no network connection of its own, and it contains no advertising, analytics, tracking or crash-reporting SDKs. Your sessions stay on your iPhone. Feji Studios never receives them, and does not sell or share your information.',
+    },
+    {
+      title: 'Your practice record',
+      text: 'Varva stores what you log in its own storage on your iPhone: each session’s practice (Heat, Cold or Contrast), duration, optional temperature, Heat rounds, Contrast phases, finish time and time zone, and any reflection you write. It also stores your weekly practice and its history, planned breaks, saved routines, an unfinished entry so it can be recovered, and preferences such as your temperature unit and reminder schedule. This information is used only to show Today, the Journal, Insights, widgets and reminders. Feji Studios does not hold a copy that can be accessed or recovered for you.',
+    },
+    {
+      title: 'No sync or Apple Health',
+      text: 'Varva does not sync between devices and does not use iCloud sync, CloudKit or Apple Health. It does not request access to your location, contacts, photos, camera, microphone or calendars.',
+    },
+    {
+      title: 'iPhone backups',
+      text: 'Varva does not exclude its data from your iPhone’s own backup. If you back up your iPhone to iCloud or a computer, that backup may include Varva’s data. Whether a backup exists and what it restores is controlled by iOS, your settings and Apple’s privacy policy, not by Feji Studios.',
+      inlineLinks: [{ text: 'Apple’s privacy policy', url: 'https://www.apple.com/legal/privacy/' }],
+    },
+    {
+      title: 'Backups and CSV exports',
+      text: 'In Settings › Backups & export you can save a complete backup, a file containing your sessions, reflections, Contrast phases, goal history and saved routines, or export your sessions as a CSV file. Varva creates these files only when you ask, and you choose where they go, such as the Files app, iCloud Drive or another app. Once exported, a file is outside Varva and is handled by the place you saved it under its own privacy policy. Backups contain your reflections, so keep them somewhere you trust. Feji Studios never receives them.',
+    },
+    {
+      title: 'Restoring a backup',
+      text: 'When you restore, Varva reads the file you choose on your iPhone and checks it before anything is replaced. Before replacing your current history, Varva saves a safety copy of the existing record in its own storage on your iPhone, which you can export again from Settings › Backups & export. Safety copies stay on the device until you delete Varva. Reminder settings are not part of a backup.',
+    },
+    {
+      title: 'Reminders',
+      text: 'Practice reminders are optional and off until you turn them on. Apple’s permission request appears only when you choose to enable reminders, after your first logged session or in Settings › Practice reminders. Reminders are scheduled locally by iOS for the days and time you choose, up to eight weeks ahead, and contain a general invitation to practise rather than details of your sessions. Notifications are scheduled on your device, not on a server. You can change the schedule or turn reminders off in Varva, and manage notification permission in iOS Settings.',
+    },
+    {
+      title: 'Widgets',
+      text: 'If you add a Varva widget, it shows this week’s Discipline, the sessions completed against your weekly target and a short note about what remains. To do this, Varva shares a small weekly summary with its widget through storage on your iPhone reserved for Varva and its widget. The summary contains no reflections or session details. Lock Screen widgets can be seen by anyone who can see your Lock Screen. You can remove a widget at any time.',
+    },
+    {
+      title: 'Diagnostics and crash reports',
+      text: 'When something goes wrong, such as a save that fails, Varva writes a brief technical message to your iPhone’s system log. These messages name the kind of error only; details that could include session content are marked private so that iOS redacts them. Varva does not upload these messages or use a third-party crash SDK. Apple separately provides crash reports under its own policies: App Store reports depend on your analytics sharing settings; TestFlight automatically shares crash reports with the developer.',
+    },
+    {
+      title: 'Purchases',
+      text: 'Varva is sold through the App Store. Apple processes your purchase, and Feji Studios does not receive your payment details or Apple Account information.',
+    },
+    {
+      title: 'Deleting your data',
+      text: 'You can edit or delete individual sessions from the Journal, and delete saved routines or an unfinished entry in Settings › Saved routines & preferences. Deleting Varva removes all of its data from your iPhone, including safety copies. It does not delete backup or CSV files you exported, or iPhone backups made by iOS; manage those where they are stored.',
+    },
+    {
+      title: 'Children',
+      text: 'Varva is not directed at children. Because Feji Studios collects no data through Varva, it does not knowingly collect information from anyone, including children.',
+    },
+    {
+      title: 'Contacting Feji Studios',
+      text: 'If you choose to email for support, Feji Studios receives the email address and information you include so that a response can be provided. This is separate from data collection through the app. Please do not send reflections or backup files unless your question needs them.',
+    },
+    {
+      title: 'Your rights',
+      text: 'Feji Studios is based in Finland. Varva’s data stays on your iPhone, where you can view, change and delete it yourself. For support correspondence, you can ask for a copy, correction or deletion by writing to hello@feji.fi. If you live in the EU or EEA, you can also lodge a complaint with your local data protection authority; in Finland, that is the Data Protection Ombudsman.',
+      inlineLinks: [varvaContactLink, { text: 'Data Protection Ombudsman', url: 'https://tietosuoja.fi/en' }],
+    },
+    {
+      title: 'Scope of this policy',
+      text: 'This policy describes the Varva app. Services you use separately, including the Apple App Store, iCloud, iOS and any app or service where you save an exported file, are governed by their own privacy policies.',
+    },
+    {
+      title: 'Changes to this policy',
+      text: "Any changes to this policy will be published on this page. The policy will be updated if Varva's data handling changes. Last updated 3 November 2026.",
+    },
+    {
+      title: 'Contact',
+      text: 'If you have a question about Varva and your privacy, contact Feji Studios at hello@feji.fi.',
+      inlineLinks: [varvaContactLink],
+    },
+  ],
+};
+export const varvaTerms: LegalDocument = {
+  title: 'Terms & Conditions',
+  heading: 'Varva Terms & Conditions',
+  dateLabel: 'Last updated',
+  date: '3 November 2026',
+  sections: [
+    {
+      title: 'Using Varva',
+      text: 'These terms describe your use of Varva, an iPhone app for logging Heat, Cold and Contrast sessions against a weekly practice you choose. Please read them together with the privacy policy.',
+      inlineLinks: [{ text: 'privacy policy', url: '/varva/privacy' }],
+    },
+    {
+      title: 'Not medical advice',
+      text: 'Varva is a personal record. It is not a medical device and does not provide medical, health or safety advice. Discipline shows how closely you kept the weekly practice you chose, and Exposure summarises the time you recorded. Neither measures health, fitness, recovery or benefit, and Varva does not recommend durations, temperatures or how often to practise.',
+    },
+    {
+      title: 'Practise safely',
+      text: 'Sauna, cold water and contrast exposure place real demands on the body and are not suitable for everyone. Speak with a doctor before starting or changing a practice, especially if you have a heart or circulatory condition, are pregnant or take medication. Do not practise after drinking alcohol or alone in open cold water, and stop if you feel unwell. Varva is not a timer or safety device, and a goal, reminder or week’s progress is never a reason to stay in the heat or cold.',
+    },
+    {
+      title: 'One-time purchase',
+      text: 'Varva is a one-time purchase on the App Store, with no subscription, in-app purchases or advertising. Apple handles payment, Family Sharing and refunds under its own terms.',
+    },
+    {
+      title: 'Your information',
+      text: 'Your practice record remains yours. Feji Studios does not collect it through Varva; it stays on your iPhone. See the privacy policy for details.',
+      inlineLinks: [{ text: 'privacy policy', url: '/varva/privacy' }],
+    },
+    {
+      title: 'Keeping your record',
+      text: 'Varva does not sync between devices, and Feji Studios holds no copy of your record that can be recovered for you. Deleting the app, or losing your iPhone without a backup, can mean losing your history. Save a complete backup from Settings › Backups & export from time to time and keep it somewhere you trust.',
+    },
+    {
+      title: 'License & ownership',
+      text: "Varva's code, design, and original artwork belong to their respective owners. Your use of the app is subject to the license supplied with it through the App Store. Apple's Standard End User License Agreement applies where no custom license is provided. Your own practice record is not transferred to Feji Studios.",
+      inlineLinks: [
+        {
+          text: "Apple's Standard End User License Agreement",
+          url: 'https://www.apple.com/legal/internet-services/itunes/dev/stdeula/',
+        },
+      ],
+    },
+    {
+      title: 'Responsible use',
+      text: "Use Varva lawfully and do not interfere with the app's operation. These restrictions do not prevent activities expressly permitted by applicable law.",
+    },
+    {
+      title: 'Availability',
+      text: 'Feji Studios works to keep Varva reliable, but cannot promise that the app will always be error-free or available on every device and iOS version. Your statutory rights remain unaffected.',
+    },
+    {
+      title: 'Governing law',
+      text: 'These terms are governed by the laws of Finland. If you are a consumer, you also keep the protection of the mandatory laws of the country where you live.',
+    },
+    {
+      title: 'Updates to these terms',
+      text: 'Updates to these terms will be published on this page with a new date.',
+    },
+    {
+      title: 'Contact',
+      text: 'For questions about Varva or these terms, contact Feji Studios at hello@feji.fi.',
+      inlineLinks: [varvaContactLink],
+    },
+  ],
+};
 export function getDocument(product: string, document: string) {
   if (product === 'styrka')
     return document === 'privacy'
@@ -268,6 +418,12 @@ export function getDocument(product: string, document: string) {
       ? orkaPrivacy
       : document === 'terms'
         ? orkaTerms
+        : null;
+  if (product === 'varva')
+    return document === 'privacy'
+      ? varvaPrivacy
+      : document === 'terms'
+        ? varvaTerms
         : null;
   return null;
 }

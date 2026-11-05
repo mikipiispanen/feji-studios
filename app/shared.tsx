@@ -49,6 +49,12 @@ export function Footer() {
           <a href="/orka/terms">Terms</a>
           <a href="/orka/support">Support</a>
         </div>
+        <div>
+          <a href="/varva">Varva</a>
+          <a href="/varva/privacy">Privacy</a>
+          <a href="/varva/terms">Terms</a>
+          <a href="/varva/support">Support</a>
+        </div>
       </div>
     </footer>
   );

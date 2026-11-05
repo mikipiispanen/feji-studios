@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 const base = process.argv[2] || 'http://localhost:3011';
-const paths = ['/', '/orka', '/styrka', '/orka/privacy', '/orka/terms', '/orka/support', '/styrka/privacy', '/styrka/terms'];
+const paths = ['/', '/orka', '/styrka', '/orka/privacy', '/orka/terms', '/orka/support', '/styrka/privacy', '/styrka/terms', '/varva', '/varva/privacy', '/varva/terms', '/varva/support'];
 const titles = new Set();
 for (const path of paths) {
   const res = await fetch(base + path);
@@ -20,7 +20,7 @@ for (const path of paths) {
   assert.ok(!html.includes('chunks/link-'), `no broken Link runtime: ${path}`);
   console.log(`PASS ${path}: title, canonical, description, h1, JSON-LD, anchors`);
 }
-for (const path of ['/missing-page', '/orka/missing-document', '/missing/privacy']) {
+for (const path of ['/missing-page', '/orka/missing-document', '/missing/privacy', '/styrka/support', '/varva/missing-document']) {
   assert.equal((await fetch(base + path)).status, 404, path);
 }
 for (const path of ['/privacy', '/terms']) {

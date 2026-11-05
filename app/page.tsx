@@ -68,7 +68,7 @@ export default function Home() {
         <section className="work wrap" id="apps">
           <div className="section-label">
             <span>LESS CLUTTER. MORE PURPOSE.</span>
-            <span>01 — 02</span>
+            <span>01 — 03</span>
           </div>
           <article
             className="product orka reveal"
@@ -345,6 +345,40 @@ export default function Home() {
               </p>
             </div>
           </div>
+          <article
+            className="varva-teaser reveal"
+            id="varva"
+            data-expression="cool"
+          >
+            <div className="product-name">
+              <Image
+                unoptimized
+                src="/images/varva-icon.webp"
+                alt="Varva app icon"
+                width={48}
+                height={48}
+              />
+              <span>Varva</span>
+            </div>
+            <div className="varva-teaser-copy">
+              <span className="status">
+                <i /> COMING SOON
+              </span>
+              <h2>
+                Heat. Cold.
+                <br />
+                <em>Discipline.</em>
+              </h2>
+              <p>
+                A private iPhone app for a deliberate sauna and cold practice.
+                Set a weekly goal, log each session, and see how consistently
+                you keep it.
+              </p>
+              <a className="pill light" href="/varva">
+                Explore Varva <ArrowUpRight size={18} />
+              </a>
+            </div>
+          </article>
         </section>
         <section
           className="about wrap reveal"

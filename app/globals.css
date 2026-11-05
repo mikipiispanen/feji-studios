@@ -1559,6 +1559,50 @@ html[data-face='cool'] .face-cool {
   .app-highlights ul { grid-template-columns: repeat(2, 1fr); }
 }
 
+/* Varva borrows the app's dark thermal palette: ember for Heat, ice for Cold. */
+.varva-teaser {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 40px;
+  margin-bottom: 85px;
+  padding: 51px 52px 56px;
+  border-radius: 28px;
+  background: radial-gradient(ellipse at 85% 0%, #6b2f12 0%, #2a140b 40%, #0f0c0b 75%), #0f0c0b;
+  color: #f4ece4;
+}
+.varva-teaser .product-name { align-self: start; }
+.varva-teaser .product-name > img { border: 1px solid #ffffff29; }
+.varva-teaser .status { margin-top: 0; color: #e8b48f; }
+.varva-teaser h2 { font-size: clamp(40px, 5vw, 62px); line-height: 1.08; letter-spacing: -0.055em; margin: 21px 0; }
+.varva-teaser p { max-width: 440px; color: #c9b8ab; font-size: 17px; line-height: 1.65; margin-bottom: 29px; }
+.varva-teaser .pill.light { background: #f4ece4; color: #1a0f0a; }
+.app-page-varva .app-highlights {
+  border-top: 0;
+  padding: 52px 48px 56px;
+  border-radius: var(--radius);
+  background: radial-gradient(ellipse at 88% 0%, #6b2f12 0%, #2a140b 40%, #0f0c0b 75%), #0f0c0b;
+  color: #f4ece4;
+}
+.app-page-varva .app-highlights li::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 2px;
+  margin-bottom: 18px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, #ff8a3d, #8fd0ff);
+}
+.app-page-varva .app-highlights p { color: #c9b8ab; }
+.app-page-varva .app-google { margin-top: 72px; }
+@media (max-width: 1000px) {
+  .varva-teaser { grid-template-columns: 1fr; gap: 28px; }
+}
+@media (max-width: 700px) {
+  .varva-teaser { padding: 36px 24px 40px; margin-bottom: 60px; }
+  .app-page-varva .app-highlights { padding: 36px 22px 40px; }
+  .app-page-varva .app-google { margin-top: 52px; }
+}
+
 /* Native SVG cursors: no tracking layer, animation loop, or click interception. */
 @media (hover: hover) and (pointer: fine) and (forced-colors: none) {
   html {

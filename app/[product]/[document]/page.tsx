@@ -4,17 +4,28 @@ import { Fragment, type ReactNode } from 'react';
 import { Header, Footer } from '../../shared';
 import { getDocument, type LegalDocument } from '../../legal-content';
 import OrkaSupport, { orkaSupportMetadata } from '../../orka-support';
+import VarvaSupport, { varvaSupportMetadata } from '../../varva-support';
 type Props = { params: Promise<{ product: string; document: string }> };
-const isOrkaSupport = (product: string, document: string) =>
-  product === 'orka' && document === 'support';
+const products: Record<string, { name: string; summary: string }> = {
+  orka: { name: 'Orka', summary: 'the student planner for tasks, deadlines, exams and classes' },
+  styrka: { name: 'Styrka', summary: 'the iOS gym tracker' },
+  varva: { name: 'Varva', summary: 'the Heat, Cold and Contrast practice tracker for iPhone' },
+};
+const supportPages: Record<string, { page: () => ReactNode; metadata: Metadata }> = {
+  orka: { page: OrkaSupport, metadata: orkaSupportMetadata },
+  varva: { page: VarvaSupport, metadata: varvaSupportMetadata },
+};
+const getSupport = (product: string, document: string) =>
+  document === 'support' && Object.hasOwn(supportPages, product) ? supportPages[product] : null;
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { product, document } = await params;
-  if (isOrkaSupport(product, document)) return orkaSupportMetadata;
+  const support = getSupport(product, document);
+  if (support) return support.metadata;
   const content = getDocument(product, document);
   if (!content) return { title: 'Page not found' };
-  const name = product === 'orka' ? 'Orka' : 'Styrka';
+  const { name, summary } = products[product];
   const title = `${name} ${content.title}`;
-  const description = `Read the ${content.title.toLowerCase()} for ${name}, ${product === 'orka' ? 'the student planner for tasks, deadlines, exams and classes' : 'the iOS gym tracker'}, by Feji Studios. ${document === 'privacy' ? 'Learn how the app handles your data.' : 'Learn about use of the app and your responsibilities.'}`;
+  const description = `Read the ${content.title.toLowerCase()} for ${name}, ${summary}, by Feji Studios. ${document === 'privacy' ? 'Learn how the app handles your data.' : 'Learn about use of the app and your responsibilities.'}`;
   return {
     title,
     description,
@@ -62,10 +73,11 @@ function SectionText({
 }
 export default async function LegalPage({ params }: Props) {
   const { product, document } = await params;
-  if (isOrkaSupport(product, document)) return <OrkaSupport />;
+  const support = getSupport(product, document);
+  if (support) return <support.page />;
   const content = getDocument(product, document);
   if (!content) notFound();
-  const name = product === 'orka' ? 'Orka' : 'Styrka';
+  const { name } = products[product];
   return (
     <>
       <Header />
@@ -84,7 +96,7 @@ export default async function LegalPage({ params }: Props) {
         {content.draft && (
           <aside className="draft-note">
             <strong>Draft — pending confirmation</strong>This document is not
-            final. Orka’s complete{' '}
+            final. {name}’s complete{' '}
             {document === 'privacy' ? 'privacy policy' : 'terms'} will be
             published before launch.
           </aside>
@@ -120,9 +132,9 @@ export default async function LegalPage({ params }: Props) {
               >
                 {`Read ${name} ${document === 'privacy' ? 'terms and conditions' : 'privacy policy'} ↗`}
               </a>
-              {product === 'orka' && (
-                <a className="text-link" href="/orka/support">
-                  Orka support ↗
+              {Object.hasOwn(supportPages, product) && (
+                <a className="text-link" href={`/${product}/support`}>
+                  {name} support ↗
                 </a>
               )}
             </nav>

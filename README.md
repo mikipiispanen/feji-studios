@@ -1,6 +1,6 @@
 # Feji Studios
 
-A responsive studio website for Orka and Styrka, built with React, Vinext, and the Sites starter.
+A responsive studio website for Orka, Styrka and Varva, built with React, Vinext, and the Sites starter.
 
 ## Development
 
@@ -14,11 +14,12 @@ A responsive studio website for Orka and Styrka, built with React, Vinext, and t
 - Colors, responsive styling, and motion fallbacks: `app/globals.css`
 - Scroll behavior: `app/motion.tsx`
 - Legal content: `app/legal-content.ts`
+- Support pages: `app/orka-support.tsx`, `app/varva-support.tsx`
 - Outstanding release details: `CONTENT_REVIEW.md`
 
 The supplied imagery is optimized to WebP without changing its composition or colors. Original files remain in their supplied locations. The project adds no analytics, forms, or tracking scripts. Hosting request handling is independent of app privacy disclosures.
 
-Routes: `/`, `/orka`, `/styrka`, `/orka/privacy`, `/orka/terms`, `/styrka/privacy`, `/styrka/terms`. Legacy `/privacy` and `/terms` redirect permanently to Styrka's pages.
+Routes: `/`, `/orka`, `/styrka`, `/varva`, `/orka/privacy`, `/orka/terms`, `/orka/support`, `/styrka/privacy`, `/styrka/terms`, `/varva/privacy`, `/varva/terms`, `/varva/support`. Legacy `/privacy` and `/terms` redirect permanently to Styrka's pages.
 
 ## Open in Visual Studio Code
 
