@@ -1,6 +1,6 @@
 # BanBan publication review — 17 November 2026
 
-Status: the owner approved the complete privacy/support content and publication on feji.fi on 17 November 2026, including the controller, processing-grounds and support-retention wording. Deployment and public URL verification are pending at this commit. Pushing to `main` automatically deploys feji.fi.
+Status: the owner approved the complete privacy/support content and publication on feji.fi on 17 November 2026, including the controller, processing-grounds and support-retention wording. The initial deployment succeeded and both public URLs were verified at 14:49 Helsinki. A later audit prompted the logging amendment below; the owner delegated its publication decision, and it is approved for deployment. Pushing to `main` automatically deploys feji.fi.
 
 Proposed public URLs:
 
@@ -79,3 +79,13 @@ Preflight only: all 31 existing build-validation cases passed; the current priva
 - Browser/mobile visual inspection remains unperformed because CUA could not open a browser. Source inspection confirms reuse of the existing mobile breakpoint, wrapping footer, semantic structure, focus styling and colours; foreground/body-text contrast remains unchanged.
 
 Git at the preapproval handoff: website changes were uncommitted (six modified tracked files, three new files). No commit, push or deployment had been performed. BanBan's prior dirty worktree was preserved; preparation added only the new `Docs/Legal/FejiTestFlightReview.md` handoff document there. No iOS configuration changes or new archive had been made.
+
+## Publication and later logging amendment
+
+The initial publication used commit `3ad9986bddfadc1f99cc67883039d671f9daa6f6` and existing [Deploy run 44086377796](https://github.com/mikipiispanen/feji-studios/actions/runs/44086377796). Both BanBan URLs returned HTTP 200 with the approved content at 14:49:20 Helsinki on 17 November 2026. All 14 live-route checks, navigation/footer/email/direct reloads, 404s, redirects, sitemap, robots and social image then passed. An initial sitemap propagation delay resolved without changes.
+
+A concurrent `BanBan/Docs/Phase2/LoggingRetentionAudit.md` appeared after that publication. It reports 90-day Cloudflare object-name/activity analytics containing room PINs and hashed network identifiers, and saved diagnostic captures with raw IP/request information and approximate IP-derived location. These are separate from active room cleanup and the 30-day recovery window. The amended policy adds a specific Cloudflare usage-statistics section and expands the diagnostics section; no app behavior or infrastructure is changed.
+
+The exact two-section amendment was provided in `outputs/banban-logging-amendment.md`. After being shown the new facts and remaining uncertainties, the owner said to use the agent's judgment. Publishing the more explicit disclosure was selected. The amended production build, type check, exact rendered section checks and full local smoke check passed before publication.
+
+Remaining uncertainties are the fixed retention of saved diagnostic output, Cloudflare's internal edge/security log retention, and the scope/retention of historical diagnostic excerpts in an AI transcript reported by the concurrent audit. The amendment does not claim those copies were deleted. No raw captures were opened or deleted and no Cloudflare configuration was changed in this website task. Public verification of the amendment is pending at this commit.
