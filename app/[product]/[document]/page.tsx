@@ -5,15 +5,18 @@ import { Header, Footer } from '../../shared';
 import { getDocument, type LegalDocument } from '../../legal-content';
 import OrkaSupport, { orkaSupportMetadata } from '../../orka-support';
 import VarvaSupport, { varvaSupportMetadata } from '../../varva-support';
+import BanBanSupport, { banbanSupportMetadata } from '../../banban-support';
 type Props = { params: Promise<{ product: string; document: string }> };
 const products: Record<string, { name: string; summary: string }> = {
   orka: { name: 'Orka', summary: 'the student planner for tasks, deadlines, exams and classes' },
   styrka: { name: 'Styrka', summary: 'the iOS gym tracker' },
   varva: { name: 'Varva', summary: 'the Heat, Cold and Contrast practice tracker for iPhone' },
+  banban: { name: 'BanBan', summary: 'the party game for online parties and One Phone play' },
 };
 const supportPages: Record<string, { page: () => ReactNode; metadata: Metadata }> = {
   orka: { page: OrkaSupport, metadata: orkaSupportMetadata },
   varva: { page: VarvaSupport, metadata: varvaSupportMetadata },
+  banban: { page: BanBanSupport, metadata: banbanSupportMetadata },
 };
 const getSupport = (product: string, document: string) =>
   document === 'support' && Object.hasOwn(supportPages, product) ? supportPages[product] : null;
@@ -78,12 +81,13 @@ export default async function LegalPage({ params }: Props) {
   const content = getDocument(product, document);
   if (!content) notFound();
   const { name } = products[product];
+  const relatedDocument = document === 'privacy' ? 'terms' : 'privacy';
   return (
     <>
       <Header />
       <main className="legal wrap" id="main-content">
-        <a className="legal-back" href={`/${product}`}>
-          ← Back to {name}
+        <a className="legal-back" href={product === 'banban' ? '/' : `/${product}`}>
+          ← Back to {product === 'banban' ? 'Feji Studios' : name}
         </a>
         <p className="eyebrow">{name.toUpperCase()} / LEGAL</p>
         <h1>{content.heading ?? content.title}</h1>
@@ -126,12 +130,11 @@ export default async function LegalPage({ params }: Props) {
               </section>
             ))}
             <nav className="legal-related" aria-label={`More about ${name}`}>
-              <a
-                className="text-link"
-                href={`/${product}/${document === 'privacy' ? 'terms' : 'privacy'}`}
-              >
-                {`Read ${name} ${document === 'privacy' ? 'terms and conditions' : 'privacy policy'} ↗`}
-              </a>
+              {getDocument(product, relatedDocument) && (
+                <a className="text-link" href={`/${product}/${relatedDocument}`}>
+                  {`Read ${name} ${document === 'privacy' ? 'terms and conditions' : 'privacy policy'} ↗`}
+                </a>
+              )}
               {Object.hasOwn(supportPages, product) && (
                 <a className="text-link" href={`/${product}/support`}>
                   {name} support ↗

@@ -1,3 +1,5 @@
+import { banbanPrivacy } from './banban-privacy';
+
 export type LegalDocument = {
   title: string;
   // Visible page heading when it should differ from `title`.
@@ -407,6 +409,8 @@ export const varvaTerms: LegalDocument = {
   ],
 };
 export function getDocument(product: string, document: string) {
+  if (product === 'banban')
+    return document === 'privacy' ? banbanPrivacy : null;
   if (product === 'styrka')
     return document === 'privacy'
       ? privacy

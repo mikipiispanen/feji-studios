@@ -55,6 +55,11 @@ export function Footer() {
           <a href="/varva/terms">Terms</a>
           <a href="/varva/support">Support</a>
         </div>
+        <div>
+          <span>BanBan</span>
+          <a href="/banban/privacy">Privacy</a>
+          <a href="/banban/support">Support</a>
+        </div>
       </div>
     </footer>
   );

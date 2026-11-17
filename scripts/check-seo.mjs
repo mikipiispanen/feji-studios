@@ -1,11 +1,13 @@
 import assert from 'node:assert/strict';
 const base = process.argv[2] || 'http://localhost:3011';
-const paths = ['/', '/orka', '/styrka', '/orka/privacy', '/orka/terms', '/orka/support', '/styrka/privacy', '/styrka/terms', '/varva', '/varva/privacy', '/varva/terms', '/varva/support'];
+const paths = ['/', '/orka', '/styrka', '/orka/privacy', '/orka/terms', '/orka/support', '/styrka/privacy', '/styrka/terms', '/varva', '/varva/privacy', '/varva/terms', '/varva/support', '/banban/privacy', '/banban/support'];
 const titles = new Set();
+const documents = new Map();
 for (const path of paths) {
   const res = await fetch(base + path);
   assert.equal(res.status, 200, path);
   const html = await res.text();
+  documents.set(path, html);
   const title = html.match(/<title>(.*?)<\/title>/s)?.[1];
   assert.ok(title && !titles.has(title), `unique title: ${path}`);
   titles.add(title);
@@ -20,7 +22,34 @@ for (const path of paths) {
   assert.ok(!html.includes('chunks/link-'), `no broken Link runtime: ${path}`);
   console.log(`PASS ${path}: title, canonical, description, h1, JSON-LD, anchors`);
 }
-for (const path of ['/missing-page', '/orka/missing-document', '/missing/privacy', '/styrka/support', '/varva/missing-document']) {
+// Check destinations as well as anchor markup, including the shared footer.
+const checkedLinks = new Set();
+for (const [path, html] of documents) {
+  for (const [, href] of html.matchAll(/<a\b[^>]*href="([^"]+)"/g)) {
+    if (!href.startsWith('/')) continue;
+    const url = new URL(href, base);
+    if (checkedLinks.has(url.href)) continue;
+    checkedLinks.add(url.href);
+    let target = documents.get(url.pathname);
+    if (!target) {
+      const res = await fetch(url);
+      assert.equal(res.status, 200, `link ${href} on ${path}`);
+      target = await res.text();
+    }
+    if (url.hash) assert.ok(target.includes(`id="${decodeURIComponent(url.hash.slice(1))}"`), `destination anchor ${href} on ${path}`);
+  }
+}
+for (const path of ['/banban/privacy', '/banban/support']) {
+  const html = documents.get(path);
+  assert.match(html, /href="mailto:hello@feji.fi"/);
+  assert.match(html, /id="main-content"/);
+  assert.ok(!html.includes('href="/banban"') && !html.includes('href="/banban/terms"'), `no missing BanBan destinations: ${path}`);
+  const refreshed = await fetch(base + path);
+  assert.equal(refreshed.status, 200, `refresh ${path}`);
+  assert.equal((await refreshed.text()).match(/<title>(.*?)<\/title>/s)?.[1], html.match(/<title>(.*?)<\/title>/s)?.[1], `refresh title ${path}`);
+}
+console.log('PASS internal navigation, footer destinations, BanBan email links and direct reloads');
+for (const path of ['/missing-page', '/orka/missing-document', '/missing/privacy', '/styrka/support', '/varva/missing-document', '/banban/terms', '/banban']) {
   assert.equal((await fetch(base + path)).status, 404, path);
 }
 for (const path of ['/privacy', '/terms']) {
