@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 const base = process.argv[2] || 'http://localhost:3011';
-const paths = ['/', '/orka', '/styrka', '/orka/privacy', '/orka/terms', '/orka/support', '/styrka/privacy', '/styrka/terms', '/varva', '/varva/privacy', '/varva/terms', '/varva/support', '/banban/privacy', '/banban/support'];
+const paths = ['/', '/orka', '/styrka', '/orka/privacy', '/orka/terms', '/orka/support', '/styrka/privacy', '/styrka/terms', '/varva', '/varva/privacy', '/varva/terms', '/varva/support', '/banban/privacy', '/banban/support', '/ekvora/privacy'];
 const titles = new Set();
 const documents = new Map();
 for (const path of paths) {
@@ -66,3 +66,9 @@ const image = await fetch(base + '/opengraph-image');
 assert.equal(image.status, 200, 'existing social image');
 assert.match(image.headers.get('content-type'), /image\//);
 console.log('PASS 404s, legacy redirects, sitemap, robots and existing social image');
+
+const sellers = await fetch(base + '/app-ads.txt');
+assert.equal(sellers.status, 200, '/app-ads.txt');
+assert.match(sellers.headers.get('content-type'), /^text\/plain/);
+assert.ok((await sellers.text()).split('\n').includes('google.com, pub-3625086409262291, DIRECT, f08c47fec0942fa0'));
+console.log('PASS authorized seller entry');

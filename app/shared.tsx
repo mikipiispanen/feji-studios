@@ -60,6 +60,10 @@ export function Footer() {
           <a href="/banban/privacy">Privacy</a>
           <a href="/banban/support">Support</a>
         </div>
+        <div>
+          <span>Ekvora</span>
+          <a href="/ekvora/privacy">Privacy</a>
+        </div>
       </div>
     </footer>
   );

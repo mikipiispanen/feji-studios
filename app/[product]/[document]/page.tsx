@@ -12,6 +12,7 @@ const products: Record<string, { name: string; summary: string }> = {
   styrka: { name: 'Styrka', summary: 'the iOS gym tracker' },
   varva: { name: 'Varva', summary: 'the Heat, Cold and Contrast practice tracker for iPhone' },
   banban: { name: 'BanBan', summary: 'the party game for online parties and One Phone play' },
+  ekvora: { name: 'Ekvora', summary: 'the mental arithmetic training app for iPhone' },
 };
 const supportPages: Record<string, { page: () => ReactNode; metadata: Metadata }> = {
   orka: { page: OrkaSupport, metadata: orkaSupportMetadata },
@@ -82,12 +83,13 @@ export default async function LegalPage({ params }: Props) {
   if (!content) notFound();
   const { name } = products[product];
   const relatedDocument = document === 'privacy' ? 'terms' : 'privacy';
+  const hasProductPage = product !== 'banban' && product !== 'ekvora';
   return (
     <>
       <Header />
       <main className="legal wrap" id="main-content">
-        <a className="legal-back" href={product === 'banban' ? '/' : `/${product}`}>
-          ← Back to {product === 'banban' ? 'Feji Studios' : name}
+        <a className="legal-back" href={hasProductPage ? `/${product}` : '/'}>
+          ← Back to {hasProductPage ? name : 'Feji Studios'}
         </a>
         <p className="eyebrow">{name.toUpperCase()} / LEGAL</p>
         <h1>{content.heading ?? content.title}</h1>

@@ -1,4 +1,5 @@
 import { banbanPrivacy } from './banban-privacy';
+import { ekvoraPrivacy } from './ekvora-privacy';
 
 export type LegalDocument = {
   title: string;
@@ -409,6 +410,8 @@ export const varvaTerms: LegalDocument = {
   ],
 };
 export function getDocument(product: string, document: string) {
+  if (product === 'ekvora')
+    return document === 'privacy' ? ekvoraPrivacy : null;
   if (product === 'banban')
     return document === 'privacy' ? banbanPrivacy : null;
   if (product === 'styrka')

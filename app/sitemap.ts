@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/varva/support', priority: 0.3, changeFrequency: 'yearly' as const },
     { path: '/banban/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
     { path: '/banban/support', priority: 0.3, changeFrequency: 'yearly' as const },
+    { path: '/ekvora/privacy', priority: 0.3, changeFrequency: 'yearly' as const },
   ];
   return routes.filter(({ path }) => {
     const [, product, document] = path.split('/');
